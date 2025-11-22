@@ -30,9 +30,9 @@ function App() {
               >
                 Resume ↗
               </a>
-              <a className="btn" href="mailto:arengharibian@gmail.com">
-                Email ↗
-              </a>
+                <a className="btn" href="mailto:gharibianaren@gmail.com">
+                  Email ↗
+                </a>
               <a
                 className="btn"
                 href="https://github.com/arengharibian"
