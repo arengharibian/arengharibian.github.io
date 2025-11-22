@@ -103,12 +103,19 @@ body {
   border: 1px solid var(--border-soft);
   background: #ffffff;
   font-size: 0.83rem;
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1;
   text-decoration: none;
   color: var(--text);
   cursor: pointer;
-  transition: background 0.12s ease, border-color 0.12s ease,
-    box-shadow 0.12s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s ease, border-color 0.12s ease;
 }
+
+
 
 .btn.primary {
   background: #2563eb;
@@ -116,7 +123,6 @@ body {
   color: #ffffff;
   font-weight: 500;
 }
-
 
 .btn:hover {
   background: #f0f0f5;
@@ -126,6 +132,54 @@ body {
 .btn.primary:hover {
   background: #1d4ed8;
   border-color: #1d4ed8;
+}
+
+/* Inline email toast under the Email button */
+
+.email-btn-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.email-toast {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  border: 1px solid #e5e5ea;
+  z-index: 20;
+}
+
+.email-text {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.82rem;
+}
+
+.copy-btn {
+  background: #f5f5f7;
+  border: 1px solid #d1d1d6;
+  padding: 2px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.copy-btn:hover {
+  background: #ebebef;
+  border-color: #c7c7cc;
 }
 
 /* ROWS */
@@ -216,5 +270,11 @@ body {
   .row {
     grid-template-columns: 1fr;
     row-gap: 4px;
+  }
+
+  .email-btn-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }

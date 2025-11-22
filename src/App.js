@@ -1,7 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
+const EMAIL = "gharibianaren@gmail.com";
+
 function App() {
+  const [showEmailToast, setShowEmailToast] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  function handleEmailClick() {
+    setShowEmailToast(true);
+    setCopied(false);
+  }
+
+  function handleCopyEmail() {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(EMAIL).catch(() => {});
+    }
+    setCopied(true);
+  }
+
+  useEffect(() => {
+    if (!showEmailToast) return;
+
+    const timer = setTimeout(() => {
+      setShowEmailToast(false);
+      setCopied(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [showEmailToast]);
+
   return (
     <div className="page">
       <main className="layout">
@@ -30,9 +58,34 @@ function App() {
               >
                 Resume ↗
               </a>
-                <a className="btn" href="mailto:gharibianaren@gmail.com">
+
+              {/* Email button + inline toast */}
+              <div className="email-btn-wrapper">
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={handleEmailClick}
+                >
                   Email ↗
-                </a>
+                </button>
+
+                {showEmailToast && (
+                  <div className="email-toast">
+                    <span className="email-text">
+                      {copied ? "Copied!" : EMAIL}
+                    </span>
+                    <button
+                      type="button"
+                      className="copy-btn"
+                      onClick={handleCopyEmail}
+                      aria-label="Copy email"
+                    >
+                      {copied ? "✓" : "⧉"}
+                    </button>
+                  </div>
+                )}
+              </div>
+
               <a
                 className="btn"
                 href="https://github.com/arengharibian"
