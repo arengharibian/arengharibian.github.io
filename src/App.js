@@ -5,18 +5,51 @@ function App() {
   return (
     <div className="page">
       <main className="layout">
-        {/* HEADER */}
+        {/* HEADER – avatar left, text + buttons right */}
         <header className="header">
-          <img
-            src="/aren-avatar1.png" // white background avatar in public/
-            alt="Aren Gharibian"
-            className="avatar"
-          />
-          <div className="headline">
-            <h1>Aren Gharibian</h1>
+          <div className="avatar-shell">
+            <img
+              src="/aren-avatar1.png"
+              alt="Aren Gharibian"
+              className="avatar"
+            />
+          </div>
+
+          <div className="text-block">
+            <h1 className="name">Aren Gharibian</h1>
             <p className="subtitle">
-              Software Engineer & Computer Science Student
+              Software Engineer &amp; Computer Science Student
             </p>
+
+            <div className="header-buttons">
+              <a
+                className="btn primary"
+                href={process.env.PUBLIC_URL + "/Aren-Gharibian-Resume.pdf"}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Resume ↗
+              </a>
+              <a className="btn" href="mailto:arengharibian@gmail.com">
+                Email ↗
+              </a>
+              <a
+                className="btn"
+                href="https://github.com/arengharibian"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub ↗
+              </a>
+              <a
+                className="btn"
+                href="https://www.linkedin.com/in/aren-gharibian/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn ↗
+              </a>
+            </div>
           </div>
         </header>
 
@@ -65,48 +98,77 @@ function App() {
         </section>
 
         {/* EXPERIENCE */}
-<section className="row">
-  <div className="label">/experience</div>
-  <div className="content">
+        <section className="row">
+          <div className="label">/experience</div>
+          <div className="content">
+            {/* Nim-os */}
+            <div className="job">
+              <p className="job-title">
+                Software Engineering Intern — Nim-os (Loomis Sayles)
+              </p>
+              <ul>
+                <li>
+                  Work directly under the CTO to build a scalable C# API for
+                  delivering structured financial company data.
+                </li>
+                <li>
+                  Write and optimize SQL queries for efficient data extraction
+                  and aggregation from large datasets.
+                </li>
+                <li>
+                  Use Swagger UI and GitLab for API documentation, version
+                  control, and CI/CD in an Agile environment.
+                </li>
+              </ul>
+            </div>
 
-    {/* Nim-os / Loomis Sayles */}
-    <div className="job">
-      <p className="job-title">
-        Software Engineering Intern — Nim-os (Loomis Sayles)
-      </p>
-      <ul>
-        <li>Work directly under the CTO to build a scalable C# API for delivering structured financial company data.</li>
-        <li>Write and optimize SQL queries for efficient data extraction and aggregation from large datasets.</li>
-        <li>Use Swagger UI and GitLab for API documentation, version control, and CI/CD in an Agile environment.</li>
-      </ul>
-    </div>
+            {/* ITS */}
+            <div className="job">
+              <p className="job-title">
+                ITS Technology Consultant — Syracuse University
+              </p>
+              <ul>
+                <li>
+                  Diagnose and troubleshoot hardware and software issues for a
+                  large campus community, honing systematic problem-solving and
+                  debugging skills.
+                </li>
+                <li>
+                  Configure operating systems and software applications to
+                  ensure optimal functionality, prioritizing user experience and
+                  efficiency.
+                </li>
+                <li>
+                  Manage technical inquiries and support tickets, developing
+                  prioritization strategies and clear communication skills to
+                  resolve issues quickly.
+                </li>
+              </ul>
+            </div>
 
-    {/* ITS Tech Consultant */}
-    <div className="job">
-      <p className="job-title">
-        ITS Technology Consultant — Syracuse University
-      </p>
-      <ul>
-        <li>Diagnose and troubleshoot hardware and software issues for a large campus community, honing systematic problem-solving and debugging skills.</li>
-        <li>Configure operating systems and software applications to ensure optimal functionality, prioritizing user experience and efficiency.</li>
-        <li>Manage technical inquiries and support tickets, developing prioritization strategies and clear communication skills to resolve issues quickly.</li>
-      </ul>
-    </div>
-
-    {/* FYS Teaching Assistant */}
-    <div className="job">
-      <p className="job-title">
-        Teaching Assistant — First Year Seminar, Syracuse University
-      </p>
-      <ul>
-        <li>Facilitate discussions on university resources, academic programs, and student success strategies for first-year students.</li>
-        <li>Lead workshops on diversity, equity, and inclusion to promote intercultural awareness and a welcoming campus culture.</li>
-        <li>Assist faculty in delivering interactive, student-centered learning experiences that support the college transition.</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
+            {/* TA */}
+            <div className="job">
+              <p className="job-title">
+                Teaching Assistant — First Year Seminar, Syracuse University
+              </p>
+              <ul>
+                <li>
+                  Facilitate discussions on university resources, academic
+                  programs, and student success strategies for first-year
+                  students.
+                </li>
+                <li>
+                  Lead workshops on diversity, equity, and inclusion to promote
+                  intercultural awareness and a welcoming campus culture.
+                </li>
+                <li>
+                  Assist faculty in delivering interactive, student-centered
+                  learning experiences that support the college transition.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
         {/* CONTACT */}
         <section className="row">
@@ -121,37 +183,6 @@ function App() {
             <p className="signature">— Aren</p>
           </div>
         </section>
-
-        {/* BUTTONS */}
-        <div className="buttons">
-          <a
-            className="btn primary"
-            href="/Aren-Gharibian-Resume.pdf"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Resume ↗
-          </a>
-          <a className="btn" href="mailto:arengharibian@gmail.com">
-            Email ↗
-          </a>
-          <a
-            className="btn"
-            href="https://github.com/arengharibian"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub ↗
-          </a>
-          <a
-            className="btn"
-            href="https://www.linkedin.com/in/aren-gharibian/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn ↗
-          </a>
-        </div>
       </main>
     </div>
   );
