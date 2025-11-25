@@ -111,11 +111,11 @@ function App() {
           <div className="label">/about</div>
           <div className="content">
             <p>
-              I’m a senior Computer Science student at Syracuse University who
-              likes building simple, fast products that feel good to use. I’m
-              comfortable working across the stack—from React frontends to .NET
-              and Python backends—and I care a lot about clean code,
-              maintainable systems, and thoughtful UX.
+            I am a senior Computer Science student at Syracuse University with a strong interest in software engineering and finance.
+            This past year, I have been working as a Software Engineering Intern at Nim-os, where I build C#/.NET APIs that integrate with FactSet financial data and Azure services.
+            I enjoy working on the backend, solving real problems with clean, reliable code, and learning how technology and markets connect.
+            Outside of class and work, I like experimenting with side projects, exploring new tools, and continuously improving as a developer.
+
             </p>
           </div>
         </section>
@@ -125,27 +125,18 @@ function App() {
           <div className="label">/projects</div>
           <div className="content">
             <p>
-              I’m currently building <strong>GourmAI</strong>, a cooking and
-              recipe subscription platform focused on user-generated content and
-              subscription analytics.
+              <strong>FactSet Fundamentals API</strong> — At Nim-os, I helped
+              build a scalable API in C#/.NET Aspire to expose company
+              fundamentals from FactSet. I worked on endpoint design, SQL
+              queries for large datasets, and wiring in observability so the
+              team can actually see how the service behaves in production.
             </p>
             <p>
-              I also created <strong>Synonymle</strong>, a Wordle-style game
-              that uses synonyms instead of letters, with a React frontend and
-              Python backend (
-              <a
-                href="https://github.com/arengharibian/Synonymle"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
-              ).
-            </p>
-            <p>
-              During my internship, I worked on a{" "}
-              <strong>FactSet Fundamentals API</strong> built with .NET Aspire,
-              integrating FactSet data with SQL and modern telemetry.
+              <strong>Swapify</strong> — A small web app I built to make it easy
+              for students to swap items, textbooks, and small goods instead of
+              buying everything new. I used a modern React frontend with a clean
+              minimal UI and a simple backend to handle listings and messages
+              between students.
             </p>
           </div>
         </section>
