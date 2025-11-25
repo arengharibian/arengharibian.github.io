@@ -2,7 +2,7 @@
   "name": "arengharibian.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://arengharibian.github.io",
+  "homepage": "https://arengharibian.com",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
