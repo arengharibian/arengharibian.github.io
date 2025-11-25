@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="page">
       <main className="layout">
-        {/* HEADER – avatar left, text + buttons right */}
+        {/* HEADER – avatar left on desktop, stacked on mobile */}
         <header className="header">
           <div className="avatar-shell">
             <img
@@ -52,7 +52,7 @@ function App() {
             <div className="header-buttons">
               <a
                 className="btn primary"
-                href={process.env.PUBLIC_URL + "/Aren-Gharibian-Resume.pdf"}
+                href="/Aren-Gharibian-Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
               >
