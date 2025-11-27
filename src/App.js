@@ -111,11 +111,15 @@ function App() {
           <div className="label">/about</div>
           <div className="content">
             <p>
-            I am a senior Computer Science student at Syracuse University with a strong interest in software engineering and finance.
-            This past year, I have been working as a Software Engineering Intern at Nim-os, where I build C#/.NET APIs that integrate with FactSet financial data and Azure services.
-            I enjoy working on the backend, solving real problems with clean, reliable code, and learning how technology and markets connect.
-            Outside of class and work, I like experimenting with side projects, exploring new tools, and continuously improving as a developer.
-
+              I am a senior Computer Science student at Syracuse University
+              with a strong interest in software engineering and finance. This
+              past year, I have been working as a Software Engineering Intern at
+              Nim-os, where I build C#/.NET APIs that integrate with FactSet
+              financial data and Azure services. I enjoy working on the backend,
+              solving real problems with clean, reliable code, and learning how
+              technology and markets connect. Outside of class and work, I like
+              experimenting with side projects, exploring new tools, and
+              continuously improving as a developer.
             </p>
           </div>
         </section>
@@ -132,11 +136,35 @@ function App() {
               team can actually see how the service behaves in production.
             </p>
             <p>
-              <strong>Swapify</strong> — A small web app I built to make it easy
-              for students to swap items, textbooks, and small goods instead of
-              buying everything new. I used a modern React frontend with a clean
-              minimal UI and a simple backend to handle listings and messages
-              between students.
+              <strong>
+                <a
+                  href="https://github.com/unown-games/excludle"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Excludle
+                </a>
+              </strong>{" "}
+              — A web word-guessing game where players must identify a target
+              word while navigating a dynamic set of banned related terms. I
+              implemented the game logic and UI using JavaScript, HTML, and CSS,
+              focusing on clean interactions, difficulty scaling, and
+              accessibility on mobile and desktop.
+            </p>
+            <p>
+              <strong>
+                <a
+                  href="https://github.com/arengharibian/swapify"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Swapify
+                </a>
+              </strong>{" "}
+              — A small web app I built to make it easy for students to swap
+              items, textbooks, and small goods instead of buying everything
+              new. I used a modern React frontend with a clean minimal UI and a
+              simple backend to handle listings and messages between students.
             </p>
           </div>
         </section>
