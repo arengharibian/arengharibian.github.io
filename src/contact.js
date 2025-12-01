@@ -7,31 +7,49 @@ function Contact({ email }) {
     senderEmail: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+
+  const WEB3FORMS_ACCESS_KEY = "679c77aa-b91a-4ee0-a009-33b4bdb1bd57";
 
   function handleChange(e) {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-    if (submitted) setSubmitted(false);
+    if (status !== "idle") setStatus("idle");
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    setStatus("sending");
 
-    const subject = `Portfolio Contact — ${form.name || "No Name"}`;
-    const body = `
-${form.message}
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: form.name,
+          email: form.senderEmail,
+          message: form.message,
+          from_page: "arengharibian.github.io/contact",
+        }),
+      });
 
-----
-From: ${form.name || "Anonymous"}
-Email: ${form.senderEmail || ""}
-`;
+      const data = await res.json();
 
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-
-    setSubmitted(true);
+      if (res.ok && data.success) {
+        setStatus("success");
+        setForm({ name: "", senderEmail: "", message: "" });
+      } else {
+        console.error("Web3Forms error:", data);
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error("Network error:", err);
+      setStatus("error");
+    }
   }
 
   return (
@@ -40,8 +58,7 @@ Email: ${form.senderEmail || ""}
         <div className="contact-header">
           <h1 className="contact-title">Contact Me!</h1>
           <p className="contact-subtitle">
-            If you’d like to chat about internships, projects, or anything else,
-            feel free to send me a message.
+            If you’d like to collaborate, discuss opportunities, or just say hello, feel free to reach out.
           </p>
         </div>
 
@@ -84,13 +101,22 @@ Email: ${form.senderEmail || ""}
             />
           </div>
 
-          <button type="submit" className="contact-submit">
-            Send message
+          <button
+            type="submit"
+            className="contact-submit"
+            disabled={status === "sending"}
+          >
+            {status === "sending" ? "Sending..." : "Send message"}
           </button>
 
-          {submitted && (
-            <p className="contact-success">
-              ✔️ Your email app should have opened with a draft to me.
+          {status === "success" && (
+            <p className="contact-success">✔️ Thanks! Your message was sent.</p>
+          )}
+
+          {status === "error" && (
+            <p className="contact-error">
+              Something went wrong. You can also email me directly at{" "}
+              <a href={`mailto:${email}`}>{email}</a>.
             </p>
           )}
         </div>
