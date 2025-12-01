@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Projects from "./Projects";
+import Contact from "./Contact";
 
 const EMAIL = "gharibianaren@gmail.com";
 
 function getPageFromHash() {
   const hash = window.location.hash.replace("#", "");
   if (hash === "projects") return "projects";
+  if (hash === "contact") return "contact";
   return "home";
 }
 
@@ -95,7 +97,7 @@ function App() {
             <button
               type="button"
               className="top-nav-link"
-              onClick={() => goHomeAndScroll("contact")}
+              onClick={() => navigateTo("contact")}
             >
               Contact
             </button>
@@ -262,8 +264,8 @@ function App() {
                   </p>
                   <ul>
                     <li>
-                      Work directly under the CTO to build a scalable C# API
-                      for delivering structured financial company data.
+                      Work directly under the CTO to build a scalable C# API for
+                      delivering structured financial company data.
                     </li>
                     <li>
                       Write and optimize SQL queries for efficient data
@@ -283,8 +285,8 @@ function App() {
                   <ul>
                     <li>
                       Diagnose and troubleshoot hardware and software issues for
-                      a large campus community, honing systematic
-                      problem-solving and debugging skills.
+                      a large campus community, honing systematic problem-solving
+                      and debugging skills.
                     </li>
                     <li>
                       Configure operating systems and software applications to
@@ -323,7 +325,7 @@ function App() {
               </div>
             </section>
 
-            {/* CONTACT */}
+            {/* CONTACT SECTION ON HOME (you can keep or remove later) */}
             <section className="row" id="contact">
               <div className="label">/contact</div>
               <div className="content">
@@ -339,8 +341,11 @@ function App() {
           </>
         )}
 
-        {/* ---------- PROJECTS PAGE ---------- */}
+        {/* PROJECTS PAGE */}
         {page === "projects" && <Projects />}
+
+        {/* CONTACT PAGE */}
+        {page === "contact" && <Contact email={EMAIL} />}
       </main>
     </div>
   );

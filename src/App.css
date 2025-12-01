@@ -479,3 +479,152 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+/* -------- CONTACT PAGE -------- */
+
+.contact-container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 28px 24px 40px; /* small gap under black nav */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Card */
+
+.contact-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.04);
+  padding: 22px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Header inside card */
+
+.contact-header {
+  margin-bottom: 6px;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.contact-subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* Body / form */
+
+.contact-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.contact-field {
+  text-align: left;
+}
+
+.contact-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  font-size: 0.95rem;
+  font-family: inherit;
+  padding: 9px 12px;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  background: #f9fafb;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: var(--accent);
+  background: #ffffff;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.18);
+}
+
+.contact-textarea {
+  resize: vertical;
+}
+
+/* Button */
+
+.contact-submit {
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 0.94rem;
+  border-radius: 999px;
+  font-weight: 500;
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contact-submit:hover {
+  background: #1d4ed8;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.2);
+}
+
+/* Messages / footer */
+
+.contact-success {
+  font-size: 0.84rem;
+  color: #22c55e;
+  margin: 4px 0 0;
+}
+
+.contact-alt {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.contact-alt a {
+  color: var(--accent);
+}
+
+/* Mobile */
+
+@media (max-width: 720px) {
+  .contact-container {
+    padding-top: 24px;
+    padding-bottom: 32px;
+  }
+
+  .contact-card {
+    padding: 20px 18px 18px;
+  }
+
+  .contact-title {
+    font-size: 1.7rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.88rem;
+  }
+}
