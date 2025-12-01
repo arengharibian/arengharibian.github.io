@@ -76,10 +76,14 @@ function App() {
             <button
               type="button"
               className="top-nav-link"
-              onClick={() => navigateTo("home")}
+              onClick={() => {
+                navigateTo("home");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
             >
               Home
             </button>
+
             <button
               type="button"
               className="top-nav-link"
