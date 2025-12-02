@@ -106,6 +106,33 @@ function Projects() {
           </div>
         </article>
 
+        {/* Algorithm & Data Structure Visualizer */}
+        <article className="project-card">
+          <div className="project-title-row">
+            <h2 className="project-name">Algorithm &amp; Data Structure Visualizer</h2>
+            <span className="project-tag">Python GUI</span>
+          </div>
+          <p className="project-meta">
+            Python · Algorithms · Visualization
+          </p>
+          <p className="project-desc">
+            A desktop tool for visualizing classic sorting algorithms and
+            data structures in real time. Includes interactive controls for
+            dataset size, animation speed, and algorithm selection, with
+            step-by-step highlighting to teach how comparisons and operations
+            evolve during execution.
+          </p>
+          <div className="project-links">
+            <a
+              href="https://github.com/arengharibian/Algorithm-Data-Structure-Visualizer"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub ↗
+            </a>
+          </div>
+        </article>
+
       </div>
     </div>
   );
