@@ -133,6 +133,33 @@ function Projects() {
           </div>
         </article>
 
+        {/* terminal-gpt */}
+        <article className="project-card">
+          <div className="project-title-row">
+            <h2 className="project-name">terminal-gpt</h2>
+            <span className="project-tag">Local AI Terminal</span>
+          </div>
+          <p className="project-meta">
+            Python · FastAPI · Ollama · HTML · CSS · JavaScript
+          </p>
+          <p className="project-desc">
+            A local-first AI assistant that looks and feels like a vintage
+            green-on-black terminal. The backend talks to a local Ollama
+            model, and the frontend renders a fake shell with a blinking
+            cursor, letting me chat with an LLM from a browser window
+            without any external API keys.
+          </p>
+          <div className="project-links">
+            <a
+              href="https://github.com/arengharibian/terminal-gpt"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub ↗
+            </a>
+          </div>
+        </article>
+
       </div>
     </div>
   );
