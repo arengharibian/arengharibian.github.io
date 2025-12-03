@@ -192,7 +192,7 @@ function Projects() {
               onClick={() =>
                 openVideo(
                   "Visualizer Demo",
-                  "https://www.youtube.com/embed/VIDEO_ID_VISUALIZER"
+                  "https://www.youtube.com/embed/xTWjw-aXXKU?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0"
                 )
               }
             >
@@ -231,7 +231,7 @@ function Projects() {
               onClick={() =>
                 openVideo(
                   "terminal-gpt Demo",
-                  "https://www.youtube.com/embed/VIDEO_ID_TERMINAL"
+                  "https://www.youtube.com/embed/pyj47UkOGlE?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0"
                 )
               }
             >
