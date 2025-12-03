@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 function Projects() {
+  const [activeVideo, setActiveVideo] = useState(null);
+
+  function openVideo(title, url) {
+    setActiveVideo({ title, url });
+  }
+
+  function closeVideo() {
+    setActiveVideo(null);
+  }
+
   return (
     <div className="projects-page">
       <h1 className="projects-title">Projects</h1>
@@ -11,22 +21,40 @@ function Projects() {
       </p>
 
       <div className="projects-grid">
-
         {/* FactSet Fundamentals API */}
         <article className="project-card">
           <div className="project-title-row">
             <h2 className="project-name">FactSet Fundamentals API</h2>
             <span className="project-tag">Backend API</span>
           </div>
-          <p className="project-meta">
-            C# · SQL · .NET Aspire · Azure
-          </p>
+          <p className="project-meta">C# · SQL · .NET Aspire · Azure</p>
           <p className="project-desc">
             Cloud-native C#/.NET Aspire service that exposes company
             fundamentals from FactSet. I worked on endpoint design, SQL
             queries over large datasets, and wired in observability so the
             team can see how the service behaves in production.
           </p>
+          <div className="project-links">
+            <a
+              href="https://github.com/arengharibian/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub ↗
+            </a>
+            <button
+              type="button"
+              className="video-link-btn"
+              onClick={() =>
+                openVideo(
+                  "FactSet Fundamentals API Demo",
+                  "https://www.youtube.com/embed/VIDEO_ID_FACTSET"
+                )
+              }
+            >
+              Video ↗
+            </button>
+          </div>
         </article>
 
         {/* Excludle */}
@@ -35,9 +63,7 @@ function Projects() {
             <h2 className="project-name">Excludle</h2>
             <span className="project-tag">Web Game</span>
           </div>
-          <p className="project-meta">
-            JavaScript · React · HTML · CSS
-          </p>
+          <p className="project-meta">JavaScript · React · HTML · CSS</p>
           <p className="project-desc">
             A logic-based word guessing game where players try to find
             a target word while navigating an evolving list of banned
@@ -52,6 +78,18 @@ function Projects() {
             >
               GitHub ↗
             </a>
+            <button
+              type="button"
+              className="video-link-btn"
+              onClick={() =>
+                openVideo(
+                  "Excludle Demo",
+                  "https://www.youtube.com/embed/VIDEO_ID_EXCLUDLE"
+                )
+              }
+            >
+              Video ↗
+            </button>
           </div>
         </article>
 
@@ -61,9 +99,7 @@ function Projects() {
             <h2 className="project-name">Swapify</h2>
             <span className="project-tag">Marketplace App</span>
           </div>
-          <p className="project-meta">
-            JavaScript · React · HTML · CSS
-          </p>
+          <p className="project-meta">JavaScript · React · HTML · CSS</p>
           <p className="project-desc">
             A student-to-student marketplace for trading textbooks and
             small goods instead of buying everything new. Minimal React UI,
@@ -78,6 +114,17 @@ function Projects() {
             >
               GitHub ↗
             </a>
+            <button
+              type="button"
+              className="video-link-btn"
+              onClick={() =>
+                openVideo(
+                  "Swapify Demo",
+                  "https://www.youtube.com/embed/VIDEO_ID_SWAPIFY"
+                )
+              }
+            >
+            </button>
           </div>
         </article>
 
@@ -87,9 +134,7 @@ function Projects() {
             <h2 className="project-name">Portfolio Website</h2>
             <span className="project-tag">Frontend Website</span>
           </div>
-          <p className="project-meta">
-            JavaScript · React · HTML · CSS
-          </p>
+          <p className="project-meta">JavaScript · React · HTML · CSS</p>
           <p className="project-desc">
             The Apple-inspired portfolio you’re viewing right now. Built with
             React, featuring a sticky nav bar, smooth scroll, responsive layout,
@@ -103,18 +148,29 @@ function Projects() {
             >
               GitHub ↗
             </a>
+            <button
+              type="button"
+              className="video-link-btn"
+              onClick={() =>
+                openVideo(
+                  "Portfolio Walkthrough",
+                  "https://www.youtube.com/embed/VIDEO_ID_PORTFOLIO"
+                )
+              }
+            >
+            </button>
           </div>
         </article>
 
         {/* Algorithm & Data Structure Visualizer */}
         <article className="project-card">
           <div className="project-title-row">
-            <h2 className="project-name">Algorithm &amp; Data Structure Visualizer</h2>
+            <h2 className="project-name">
+              Algorithm &amp; Data Structure Visualizer
+            </h2>
             <span className="project-tag">Python GUI</span>
           </div>
-          <p className="project-meta">
-            Python · Algorithms · Visualization
-          </p>
+          <p className="project-meta">Python · Algorithms · Visualization</p>
           <p className="project-desc">
             A desktop tool for visualizing classic sorting algorithms and
             data structures in real time. Includes interactive controls for
@@ -130,6 +186,18 @@ function Projects() {
             >
               GitHub ↗
             </a>
+            <button
+              type="button"
+              className="video-link-btn"
+              onClick={() =>
+                openVideo(
+                  "Visualizer Demo",
+                  "https://www.youtube.com/embed/VIDEO_ID_VISUALIZER"
+                )
+              }
+            >
+              Video ↗
+            </button>
           </div>
         </article>
 
@@ -157,10 +225,54 @@ function Projects() {
             >
               GitHub ↗
             </a>
+            <button
+              type="button"
+              className="video-link-btn"
+              onClick={() =>
+                openVideo(
+                  "terminal-gpt Demo",
+                  "https://www.youtube.com/embed/VIDEO_ID_TERMINAL"
+                )
+              }
+            >
+              Video ↗
+            </button>
           </div>
         </article>
-
       </div>
+
+      {/* VIDEO MODAL */}
+      {activeVideo && (
+        <div className="video-overlay" onClick={closeVideo}>
+          <div
+            className="video-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="video-modal-header">
+              <span className="video-modal-title">{activeVideo.title}</span>
+              <button
+                type="button"
+                className="video-modal-close"
+                onClick={closeVideo}
+                aria-label="Close video"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="video-modal-body">
+              <div className="video-responsive">
+                <iframe
+                  src={activeVideo.url}
+                  title={activeVideo.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

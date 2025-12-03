@@ -309,7 +309,10 @@ body {
   padding: 18px 18px 16px;
   border: 1px solid var(--border-soft);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;   
 }
+
 
 .project-title-row {
   display: flex;
@@ -348,138 +351,131 @@ body {
   display: flex;
   gap: 10px;
   font-size: 0.82rem;
+  margin-top: auto;      /* push this row to the bottom of the card */
+  padding-top: 8px;      /* small spacing from text above */
 }
 
-.project-links a {
-  color: var(--accent);
+
+/* GitHub + Video links in project cards */
+.project-links a,
+.video-link-btn {
+  font-size: 0.88rem;
   text-decoration: none;
+  color: var(--accent);
+  margin-right: 4px;
+  transition: opacity 0.15s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.project-links a:hover {
-  text-decoration: underline;
+.project-links a:hover,
+.video-link-btn:hover {
+  opacity: 0.7;
 }
 
-/* ---------- RESPONSIVE STYLES ---------- */
+/* ---------- VIDEO MODAL POPUP ---------- */
 
-/* Tablet-ish: tighten padding and spacing */
-@media (max-width: 768px) {
-  .layout {
-    padding: 56px 18px 28px;
-  }
-
-  .header {
-    gap: 24px;
-    margin-bottom: 32px;
-  }
-
-  .name {
-    font-size: 1.9rem;
-  }
-
-  .row {
-    grid-template-columns: 80px minmax(0, 1fr);
-    column-gap: 20px;
-  }
-
-  .top-nav-inner {
-    padding: 0 16px;
-  }
-
-  .top-nav-links {
-    gap: 14px;
-  }
+.video-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: videoOverlayFade 0.18s ease-out;
 }
 
-/* Phone: stack header, center text, single-column rows */
-@media (max-width: 520px) {
-  .layout {
-    padding: 52px 16px 24px;
-  }
+.video-modal {
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 960px;
+  width: 92%;
+  max-height: 80vh;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(8px) scale(0.96);
+  opacity: 0;
+  animation: videoModalIn 0.22s ease-out forwards;
+}
 
-  .header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+.video-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid #e5e5ea;
+  font-size: 0.9rem;
+  color: #1d1d1f;
+}
 
-  .avatar-shell {
-    width: 120px;
-    height: 120px;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-  }
+.video-modal-title {
+  font-weight: 500;
+}
 
-  .avatar {
-    width: 96px;
-    height: 96px;
-  }
+.video-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  color: #6e6e73;
+}
 
-  .text-block {
-    align-items: center;
-  }
+.video-modal-close:hover {
+  color: #111111;
+}
 
-  .name {
-    font-size: 1.7rem;
-    text-align: center;
-  }
+.video-modal-body {
+  padding: 12px 16px 16px;
+}
 
-  .subtitle {
-    font-size: 0.9rem;
-    text-align: center;
-  }
+/* Responsive 16:9 video container */
 
-  .header-buttons {
-    justify-content: center;
-    width: 100%;
-    row-gap: 8px;
-  }
+.video-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+}
 
-  .btn {
-    padding: 7px 16px;
-    font-size: 0.82rem;
-  }
+.video-responsive iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 14px;
+}
 
-  .row {
-    grid-template-columns: 1fr;
-    row-gap: 4px;
-  }
+/* Animations */
 
-  .label {
-    font-size: 0.78rem;
+@keyframes videoOverlayFade {
+  from {
+    opacity: 0;
   }
-
-  .content {
-    font-size: 0.94rem;
-  }
-
-  .email-btn-wrapper {
-    width: auto;
-    display: inline-flex;
-    justify-content: center;
-  }
-
-  .email-toast {
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 260px;
-    width: max-content;
-  }
-
-  .top-nav-links {
-    gap: 10px;
-    font-size: 0.76rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: minmax(0, 1fr);
+  to {
+    opacity: 1;
   }
 }
 
-@media (min-width: 720px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+@keyframes videoModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
-/* -------- CONTACT PAGE -------- */
+
+/* ---------- CONTACT PAGE ---------- */
 
 .contact-container {
   max-width: 640px;
@@ -608,28 +604,144 @@ body {
   color: var(--accent);
 }
 
-/* Mobile */
-
-@media (max-width: 720px) {
-  .contact-container {
-    padding-top: 24px;
-    padding-bottom: 32px;
-  }
-
-  .contact-card {
-    padding: 20px 18px 18px;
-  }
-
-  .contact-title {
-    font-size: 1.7rem;
-  }
-
-  .contact-subtitle {
-    font-size: 0.88rem;
-  }
-}
 .contact-error {
   font-size: 0.84rem;
   color: #dc2626;
   margin: 4px 0 0;
+}
+
+/* ---------- RESPONSIVE STYLES ---------- */
+
+/* Tablet-ish: tighten padding and spacing */
+@media (max-width: 768px) {
+  .layout {
+    padding: 56px 18px 28px;
+  }
+
+  .header {
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .name {
+    font-size: 1.9rem;
+  }
+
+  .row {
+    grid-template-columns: 80px minmax(0, 1fr);
+    column-gap: 20px;
+  }
+
+  .top-nav-inner {
+    padding: 0 16px;
+  }
+
+  .top-nav-links {
+    gap: 14px;
+  }
+}
+
+/* Phone: stack header, center text, single-column rows */
+@media (max-width: 520px) {
+  .layout {
+    padding: 52px 16px 24px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .avatar-shell {
+    width: 120px;
+    height: 120px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+  }
+
+  .text-block {
+    align-items: center;
+  }
+
+  .name {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .header-buttons {
+    justify-content: center;
+    width: 100%;
+    row-gap: 8px;
+  }
+
+  .btn {
+    padding: 7px 16px;
+    font-size: 0.82rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+  }
+
+  .label {
+    font-size: 0.78rem;
+  }
+
+  .content {
+    font-size: 0.94rem;
+  }
+
+  .email-btn-wrapper {
+    width: auto;
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  .email-toast {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 260px;
+    width: max-content;
+  }
+
+  .top-nav-links {
+    gap: 10px;
+    font-size: 0.76rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .video-modal {
+    width: 96%;
+    max-height: 75vh;
+    border-radius: 16px;
+  }
+
+  .video-modal-body {
+    padding: 10px 12px 14px;
+  }
+
+  .video-responsive iframe {
+    border-radius: 10px;
+  }
+}
+
+/* Wider screens: 2-column projects grid */
+@media (min-width: 720px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
