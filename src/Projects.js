@@ -124,6 +124,7 @@ function Projects() {
                 )
               }
             >
+              Video ↗
             </button>
           </div>
         </article>
@@ -158,6 +159,7 @@ function Projects() {
                 )
               }
             >
+              Video ↗
             </button>
           </div>
         </article>
@@ -223,6 +225,7 @@ function Projects() {
               target="_blank"
               rel="noreferrer"
             >
+              GitHub ↗
             </a>
             <button
               type="button"
@@ -234,6 +237,7 @@ function Projects() {
                 )
               }
             >
+              Video ↗
             </button>
           </div>
         </article>
