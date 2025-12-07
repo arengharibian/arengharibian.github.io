@@ -238,6 +238,44 @@ function Projects() {
             </button>
           </div>
         </article>
+
+        {/* TriviaTrail */}
+        <article className="project-card">
+          <div className="project-title-row">
+            <h2 className="project-name">TriviaTrail</h2>
+            <span className="project-tag">Mobile Game</span>
+          </div>
+          <p className="project-meta">Dart · Flutter · SQLite · Google Maps</p>
+          <p className="project-desc">
+            A location-aware trivia game built in Flutter as a final course
+            project. Players log in, progress through a trail of themed levels,
+            and answer multiple-choice questions with animated transitions,
+            sound effects, and score tracking persisted locally with SQLite.
+            Some levels are tied to real-world locations using GPS and a
+            mini trail map view.
+          </p>
+          <div className="project-links">
+            <a
+              href="https://github.com/arengharibian/triviatrail"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub ↗
+            </a>
+            <button
+              type="button"
+              className="video-link-btn"
+              onClick={() =>
+                openVideo(
+                  "TriviaTrail Demo",
+                  "https://www.youtube.com/embed/VIDEO_ID_TRIVIATRAIL"
+                )
+              }
+            >
+              Video ↗
+            </button>
+          </div>
+        </article>
       </div>
 
       {/* VIDEO MODAL */}
