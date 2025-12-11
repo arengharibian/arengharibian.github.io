@@ -82,11 +82,11 @@ function Projects() {
               onClick={() =>
                 openVideo(
                   "Excludle Demo",
-                  "https://www.youtube.com/embed/VIDEO_ID_EXCLUDLE"
+                  "https://excludle.com"
                 )
               }
             >
-              Video ↗
+              Demo ↗
             </button>
           </div>
         </article>
