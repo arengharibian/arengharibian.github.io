@@ -234,7 +234,7 @@ function Projects() {
                 )
               }
             >
-              Video ↗
+              {/* TriviaTrail */}
             </button>
           </div>
         </article>
@@ -273,12 +273,12 @@ function Projects() {
               }
             >
               Video ↗
-            </button>
+            </button> 
           </div>
         </article>
       </div>
 
-      {/* VIDEO MODAL */}
+      {/*Video ↗*/}
       {activeVideo && (
         <div className="video-overlay" onClick={closeVideo}>
           <div
