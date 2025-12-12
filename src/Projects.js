@@ -234,7 +234,7 @@ function Projects() {
                 )
               }
             >
-              {/* TriviaTrail */}
+              Video ↗
             </button>
           </div>
         </article>
