@@ -272,7 +272,6 @@ function Projects() {
                 )
               }
             >
-              Video ↗
             </button> 
           </div>
         </article>
