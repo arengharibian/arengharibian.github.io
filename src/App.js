@@ -197,16 +197,19 @@ function App() {
               <div className="label">/about</div>
               <div className="content">
                 <p>
-                  I am a senior Computer Science student at Syracuse University
-                  with a strong interest in software engineering and finance.
-                  This past year, I have been working as a Software Engineering
-                  Intern at Nim-os, where I build C#/.NET APIs that integrate
-                  with FactSet financial data and Azure services. I enjoy
-                  working on the backend, solving real problems with clean,
-                  reliable code, and learning how technology and markets
-                  connect. Outside of class and work, I like experimenting with
-                  side projects, exploring new tools, and continuously improving
-                  as a developer.
+                  I am a Junior Software Engineer at Dexian, contracted to
+                  Loomis Sayles, and a Syracuse University graduate with a
+                  degree in Computer Science. I build C#/.NET workflow
+                  platforms and APIs that power client meeting
+                  scheduling, calendar management, and investment workflows,
+                  with SQL-backed automation running behind the scenes. Before
+                  this role, I spent over a year on the same team as a Software
+                  Engineering Intern, working on a cloud-native FactSet
+                  financial data API. I enjoy working on the backend, solving
+                  real problems with clean, reliable code, and learning how
+                  technology and markets connect. Outside of work, I like
+                  experimenting with side projects, exploring new tools, and
+                  continuously improving as a developer.
                 </p>
               </div>
             </section>
@@ -216,12 +219,13 @@ function App() {
               <div className="label">/featured-projects</div>
               <div className="content">
                 <p>
-                  <strong>FactSet Fundamentals API</strong> — At Nim-os, I
-                  helped build a scalable API in C#/.NET Aspire to expose
-                  company fundamentals from FactSet. I worked on endpoint
-                  design, SQL queries for large datasets, and wiring in
-                  observability so the team can actually see how the service
-                  behaves in production.
+                  <strong>FactSet Fundamentals API</strong> — At Dexian
+                  (contracted to Loomis Sayles), I helped build a scalable,
+                  cloud-native API in C#/.NET Aspire to expose FactSet financial
+                  data. I worked on Entra-authenticated endpoint design,
+                  optimized SQL queries for large datasets on Azure, and wiring
+                  in observability so the team can actually see how the
+                  service behaves in production.
                 </p>
                 <p>
                   <strong>
@@ -264,20 +268,54 @@ function App() {
               <div className="content">
                 <div className="job">
                   <p className="job-title">
-                    Software Engineering Intern — Nim-os (Loomis Sayles)
+                    Junior Software Engineer — Dexian (Contracted to Loomis
+                    Sayles)
                   </p>
                   <ul>
                     <li>
-                      Work directly under the CTO to build a scalable C# API for
-                      delivering structured financial company data.
+                      Developed a C#/.NET workflow platform for client meeting
+                      scheduling, calendar management, and investment
+                      workflows.
                     </li>
                     <li>
-                      Write and optimize SQL queries for efficient data
-                      extraction and aggregation from large datasets.
+                      Built SQL-backed workflow automation to streamline
+                      scheduling, task management, and business processes.
                     </li>
                     <li>
-                      Use Swagger UI and GitLab for API documentation, version
-                      control, and CI/CD in an Agile environment.
+                      Implemented scalable application features that improved
+                      usability, performance, and operational efficiency.
+                    </li>
+                    <li>
+                      Collaborated in an Agile environment to design, test, and
+                      deliver production-ready software.
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="job">
+                  <p className="job-title">
+                    Software Engineering Intern — Dexian (Contracted to Loomis
+                    Sayles)
+                  </p>
+                  <ul>
+                    <li>
+                      Developed a cloud-native C#/.NET Aspire API delivering
+                      secure access to real-time and historical FactSet
+                      financial data.
+                    </li>
+                    <li>
+                      Built Entra-authenticated REST endpoints and optimized
+                      SQL queries on Azure for secure, high-performance data
+                      retrieval.
+                    </li>
+                    <li>
+                      Collaborated with the CTO using Swagger UI, GitLab, and
+                      CI/CD pipelines within an Agile development environment.
+                    </li>
+                    <li>
+                      Prototyped Agentic AI features for automated equity
+                      comparisons and custom research insights for investment
+                      teams.
                     </li>
                   </ul>
                 </div>
@@ -334,10 +372,9 @@ function App() {
               <div className="label">/contact</div>
               <div className="content">
                 <p>
-                  I’m interested in software engineering internships and
-                  entry-level roles where I can work on real products, backend
-                  systems, or developer tools. The best way to reach me is by
-                  email or LinkedIn.
+                  I’m interested in software engineering roles where I can work
+                  on real products, backend systems, or developer tools. The
+                  best way to reach me is by email or LinkedIn.
                 </p>
                 <p className="signature">— Aren</p>
               </div>
