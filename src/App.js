@@ -58,8 +58,9 @@ function App() {
       const nav = document.querySelector(".top-nav");
       if (el) {
         const navHeight = nav ? nav.offsetHeight : 0;
+        const extraOffset = 24;
         const elTop = el.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({ top: elTop - navHeight, behavior: "smooth" });
+        window.scrollTo({ top: elTop - navHeight - extraOffset, behavior: "smooth" });
       }
     }, 50);
   }
