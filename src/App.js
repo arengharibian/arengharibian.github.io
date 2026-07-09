@@ -55,8 +55,11 @@ function App() {
     navigateTo("home");
     setTimeout(() => {
       const el = document.getElementById(sectionId);
+      const nav = document.querySelector(".top-nav");
       if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        const navHeight = nav ? nav.offsetHeight : 0;
+        const elTop = el.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({ top: elTop - navHeight, behavior: "smooth" });
       }
     }, 50);
   }
